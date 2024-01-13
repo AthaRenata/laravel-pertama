@@ -28,7 +28,11 @@ use App\Http\Controllers\MahasiswaController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.list-artikel');
+});
+
+Route::get('/home',function(){
+    return view('pages.list-artikel');
 });
 
 // TUGAS 10
