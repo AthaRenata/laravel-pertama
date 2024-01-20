@@ -13,7 +13,7 @@
             <a class="nav-link" href="#">{{__('about')}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">{{__('articles')}}</a>
+            <a class="nav-link" href="/">{{__('articles')}}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/content-form">Add Article</a>

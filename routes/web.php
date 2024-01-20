@@ -26,13 +26,10 @@ use App\Http\Controllers\MahasiswaController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('pages.list-artikel');
-});
-
-Route::get('/home',function(){
-    return view('pages.list-artikel');
+Route::controller(ArtikelController::class)
+->group(function(){
+    Route::get('/','list');
+    Route::get('/home','list');
 });
 
 // TUGAS 10
