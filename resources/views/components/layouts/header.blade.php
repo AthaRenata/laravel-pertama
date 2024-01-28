@@ -18,6 +18,9 @@
           <li class="nav-item">
             <a class="nav-link" href="/content-form">Add Article</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users">Users</a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">{{__('language')}}</a>
             <ul class="dropdown-menu">

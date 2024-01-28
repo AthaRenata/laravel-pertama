@@ -2,6 +2,7 @@
 
 use App\Helpers\Aritmatika;
 use App\Helpers\DataKeeper;
+use App\Http\Controllers\Api\User\ApiUserController;
 use Illuminate\Http\Request;
 use App\Services\UserService;
 use Illuminate\Support\Facades\App;
@@ -30,6 +31,18 @@ Route::controller(ArtikelController::class)
 ->group(function(){
     Route::get('/','list');
     Route::get('/home','list');
+});
+
+// TUGAS
+Route::controller(ApiUserController::class)
+->prefix("/users")
+->group(function(){
+    Route::get('/','index');
+    Route::get('/add','store');
+    Route::get('/edit/{id}','show');
+    Route::post('/','store');
+    Route::patch('/{id}','update');
+    Route::delete('/{id}','destroy');
 });
 
 // TUGAS 10
