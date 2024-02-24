@@ -1,21 +1,21 @@
 <?php
 
-use App\Helpers\Aritmatika;
-use App\Helpers\DataKeeper;
-use App\Http\Controllers\Api\User\ApiUserController;
-use Illuminate\Http\Request;
-use App\Services\UserService;
-use Illuminate\Support\Facades\App;
-use App\Repositories\UserRepository;
-use Illuminate\Support\Facades\Hash;
+// use App\Helpers\Aritmatika;
+// use App\Helpers\DataKeeper;
+// use App\Http\Controllers\Api\User\ApiUserController;
+// use Illuminate\Http\Request;
+// use App\Services\UserService;
+// use Illuminate\Support\Facades\App;
+// use App\Repositories\UserRepository;
+// use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Storage;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\ArtikelController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\SessionController;
-use App\Http\Controllers\MahasiswaController;
+// use Illuminate\Support\Facades\Storage;
+// use App\Http\Controllers\UserController;
+// use App\Http\Controllers\LoginController;
+// use App\Http\Controllers\ArtikelController;
+// use App\Http\Controllers\ProfileController;
+// use App\Http\Controllers\SessionController;
+// use App\Http\Controllers\MahasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,27 +27,34 @@ use App\Http\Controllers\MahasiswaController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::controller(ArtikelController::class)
-->group(function(){
-    Route::get('/','list');
-    Route::get('/home','list');
-});
 
-// TUGAS
-Route::controller(ApiUserController::class)
-->prefix("/users")
-->group(function(){
-    Route::get('/','index');
-    Route::get('/add','store');
-    Route::get('/edit/{id}','show');
-    Route::post('/','store');
-    Route::patch('/{id}','update');
-    Route::delete('/{id}','destroy');
-});
+// PROJECT BARU
 
-// TUGAS 10
-Route::view('content-form','content-upload');
-Route::post('post-content-upload',[ArtikelController::class,'upload']);
+Route::view("/","web.home.index");
+
+
+// PROJECT LAMA
+// Route::controller(ArtikelController::class)
+// ->group(function(){
+//     Route::get('/','list');
+//     Route::get('/home','list');
+// });
+
+// // TUGAS
+// Route::controller(ApiUserController::class)
+// ->prefix("/users")
+// ->group(function(){
+//     Route::get('/','index');
+//     Route::get('/add','store');
+//     Route::get('/edit/{id}','show');
+//     Route::post('/','store');
+//     Route::patch('/{id}','update');
+//     Route::delete('/{id}','destroy');
+// });
+
+// // TUGAS 10
+// Route::view('content-form','content-upload');
+// Route::post('post-content-upload',[ArtikelController::class,'upload']);
 
 // MATERI 10
 
@@ -98,20 +105,20 @@ Route::post('post-content-upload',[ArtikelController::class,'upload']);
 
 // TUGAS 8
 
-Route::get('/localization/{locale}',function($locale){
-        session(['locale' => $locale]);
-        App::setLocale($locale);
+// Route::get('/localization/{locale}',function($locale){
+//         session(['locale' => $locale]);
+//         App::setLocale($locale);
 
-    return redirect()->back();
-});
+//     return redirect()->back();
+// });
 
-Route::controller(ArtikelController::class)
-    ->prefix('artikel')
-    ->middleware(['setlocale'])
-    ->group(function(){
-        Route::get('/list','list');
-        Route::get('/detail/{id}','detail');
-    });
+// Route::controller(ArtikelController::class)
+//     ->prefix('artikel')
+//     ->middleware(['setlocale'])
+//     ->group(function(){
+//         Route::get('/list','list');
+//         Route::get('/detail/{id}','detail');
+//     });
 
 
 // Route::get('/home/beranda', function () {

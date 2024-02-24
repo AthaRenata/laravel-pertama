@@ -1,0 +1,27 @@
+API
+- register (disini ada validasi password)
+- login => nama,email,foto,telepon
+- edit-profile => nama,email,foto,telepon
+- edit-password
+
+- list-bahan-pangan : nama,kode,total_kandungan
+- detail-bahan-pangan : nama,kode,total_kandungan, list_kandungan
+- create-gizi-individu : provinsi,kabupaten,kecamatan,kelurahan,nama,tgl_lahir,usia,jk,kondisi,ts,kesehatan,berat_badan,tinggi_badan
+- create-bahan-pangan : kategori,nama,berat
+- create_jadwal_makan : jam
+- list_jadwal_makan : nama, tanggal, jam, bahan pangan
+- list_perbandingan_akg : nama, tanggal, list_kandungan, list_akg
+
+TABLE
+- users : nama,email,telepon,password,foto
+- bahan_pangan : nama,kode
+- kandungan_bahan_pangan : id_bahan_pangan,nama,total
+
+- gizi_individu : id, id_provinsi,id_kabupaten,id_kecamatan,id_kelurahan,nama,tgl_lahir,usia,jk,kondisi,ts,kesehatan,berat_badan,tinggi_badan
+- provinsi
+- kabupaten
+- kecamatan
+- kelurahan
+
+-jadwal_makan : id, id_individu, tanggal, jam, id_bahan_pangan
+
