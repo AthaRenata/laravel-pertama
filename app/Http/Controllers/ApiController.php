@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
-    public function sendSuccess($data = [], $message = "success")
+    protected function sendSuccess($data = [], $message = "success")
     {
         return response()->json([
             'code' => 200,
@@ -15,7 +15,7 @@ class ApiController extends Controller
         ], 200);
     }
 
-    public function sendMessage($message = "success")
+    protected function sendMessage($message = "success")
     {
         return response()->json([
             'code' => 200,
@@ -23,7 +23,7 @@ class ApiController extends Controller
         ], 200);
     }
 
-    public function sendBadRequest($message = "Bad Request")
+    protected function sendBadRequest($message = "Bad Request")
     {
         return response()->json([
             'code' => 400,
@@ -31,7 +31,7 @@ class ApiController extends Controller
         ], 400);
     }
     
-    public function sendUnauthorized($message = "Unauthorized")
+    protected function sendUnauthorized($message = "Unauthorized")
     {
         return response()->json([
             'code' => 401,
@@ -39,7 +39,7 @@ class ApiController extends Controller
         ], 401);
     }
 
-    public function sendForbidden($message = "Forbidden")
+    protected function sendForbidden($message = "Forbidden")
     {
         return response()->json([
             'code' => 403,

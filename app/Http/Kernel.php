@@ -67,5 +67,6 @@ class Kernel extends HttpKernel
         'auth-middleware' => \App\Http\Middleware\AuthMiddleware::class,
         'access-token' => \App\Http\Middleware\AccessToken::class,
         'setlocale'=> \App\Http\Middleware\Localization::class,
+        'api-auth' => \App\Http\Middleware\ApiAuthMiddleware::class
     ];
 }

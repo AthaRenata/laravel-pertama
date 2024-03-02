@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ApiAuthController;
 use App\Http\Controllers\Api\User\ApiUserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,3 +27,23 @@ Route::controller(ApiUserController::class)
         Route::delete("/{id}", "destroy"); // destroy user => /users/{id}
     
     });
+
+    
+Route::get("/basic-auth",function(Request $request){
+    $username="atha";
+    $password="123";
+    return $request->header();
+});
+
+Route::get("/api-key",function(Request $request){
+    $username="atha";
+    $password="123";
+    return $request->header();
+});
+
+Route::post('/login',[ApiAuthController::class,'login']);
+Route::post('/logout',[ApiAuthController::class,'logout']);
+
+Route::get('/profile',function(){
+    return "PROFILE";
+})->middleware('api-auth');
